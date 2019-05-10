@@ -1,0 +1,13 @@
+<h1>Welcome to the Astroanuts Index!</h1>
+
+<section id="statistics">
+
+</section>
+
+<% @astronauts.each do |astronaut| %>
+  <section id="astronaut-<%= astronaut.id %>">
+    <h4><%= astronaut.name %></h4>
+    <p><%= astronaut.age %></p>
+    <p><%= astronaut.job %></p>
+<% end %>
+  </section>

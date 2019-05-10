@@ -1,0 +1,3 @@
+class MissionsController < Application
+
+end

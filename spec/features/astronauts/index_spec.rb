@@ -12,6 +12,13 @@ describe "as a user" do
       @mission_3 = Mission.create!(title: "Gemini 7", time_in_space: 567)
       @mission_4 = Mission.create!(title: "Apollo 14", time_in_space: 1244)
       @mission_5 = Mission.create!(title: "Gemini 8", time_in_space: 765)
+
+      # @astronaut_1.missions << @mission_1
+      # @astronaut_1.missions << @mission_4
+      # @astronaut_2.missions << @mission_1
+      # @astronaut_2.missions << @mission_2
+      # @astronaut_3.missions << @mission_1
+      # @astronaut_3.missions << @mission_3
     end
 
     it "it displays a list of astronauts with information" do
@@ -57,5 +64,19 @@ describe "as a user" do
         expect(page).to have_content(@mission_5.title)
       end
     end
+
+    # it "it displays the total time in space for each astronaut" do
+    #   within "#astronaut-#{@astronaut_1.id}" do
+    #     expect(page).to have_content(@astronaut_1.total_time_in_space)
+    #   end
+    #
+    #   within "#astronaut-#{@astronaut_2.id}" do
+    #     expect(page).to have_content(@astronaut_2.total_time_in_space)
+    #   end
+    #
+    #   within "#astronaut-#{@astronaut_3.id}" do
+    #     expect(page).to have_content(@astronaut_3.total_time_in_space)
+    #   end
+    # end
   end
 end

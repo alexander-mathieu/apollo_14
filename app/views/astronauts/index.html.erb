@@ -4,6 +4,12 @@
   <p>Average Age of Astronauts: <%= @astronauts.average_age %></p>
 </section>
 
+<section id="space-missions">
+  <% @missions.each do |mission| %>
+    <li><%= mission.title %></li>
+  <% end %>
+</section>
+
 <% @astronauts.each do |astronaut| %>
   <section id="astronaut-<%= astronaut.id %>">
     <h4><%= astronaut.name %></h4>

@@ -7,4 +7,8 @@ class Astronaut < ApplicationRecord
   def self.average_age
     average(:age)
   end
+
+  # def total_time_in_space
+  #   joins(:missions).sum(:time_in_space)
+  # end
 end

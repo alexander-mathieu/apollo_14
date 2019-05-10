@@ -6,6 +6,12 @@ describe "as a user" do
       @astronaut_1 = Astronaut.create!(name: "Neil Armstrong", age: 37, job: "Commander")
       @astronaut_2 = Astronaut.create!(name: "Buzz Aldrin", age: 34, job: "Lieutenant")
       @astronaut_3 = Astronaut.create!(name: "Alan Shepard", age: 45, job: "Lt. Commander")
+
+      @mission_1 = Mission.create!(title: "Apollo 13", time_in_space: 1543)
+      @mission_2 = Mission.create!(title: "Capricorn 4", time_in_space: 1119)
+      @mission_3 = Mission.create!(title: "Gemini 7", time_in_space: 567)
+      @mission_4 = Mission.create!(title: "Apollo 14", time_in_space: 1244)
+      @mission_5 = Mission.create!(title: "Gemini 8", time_in_space: 765)
     end
 
     it "it displays a list of astronauts with information" do
@@ -42,9 +48,14 @@ describe "as a user" do
 
     it "it displays a list of space missions in alphabetical order" do
       visit astronauts_path
-      "Apollo 13"
-           "Capricorn 4"
-           "Gemini 7")
+
+      within "#space-missions" do
+        expect(page).to have_content(@mission_1.title)
+        expect(page).to have_content(@mission_2.title)
+        expect(page).to have_content(@mission_3.title)
+        expect(page).to have_content(@mission_4.title)
+        expect(page).to have_content(@mission_5.title)
+      end
     end
   end
 end
